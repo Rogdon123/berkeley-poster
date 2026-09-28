@@ -1,0 +1,389 @@
+/* 全局重置与基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #e8e8e8;
+    font-family: 'Arial Narrow', 'Helvetica Neue', 'Impact', sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #1a1a1a;
+}
+
+/* 海报主容器 - 去掉了紫色边框，使用浅灰背景 */
+.poster-container {
+    background-color: #f0f0f0;
+    width: 100%;
+    max-width: 900px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 通用分割线 */
+.divider {
+    height: 2px;
+    background-color: #1a1a1a;
+    margin: 25px 0;
+}
+
+/* 标题与头部 */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.main-title {
+    font-size: 78px;
+    line-height: 0.9;
+    letter-spacing: -3px;
+    font-weight: 900;
+    color: #1a1a1a;
+    max-width: 60%;
+}
+
+.steps-box {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.steps-number {
+    font-size: 88px;
+    font-weight: 900;
+    color: #f4d03f;
+    line-height: 1;
+    letter-spacing: -2px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+.steps-label {
+    font-size: 35px;
+    font-weight: 900;
+    color: #f4d03f;
+    letter-spacing: 4px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+}
+
+.steps-subtext {
+    font-size: 11px;
+    font-style: italic;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    color: #555;
+    margin-left: 5px;
+}
+
+/* 两列布局 */
+.row-two-col {
+    display: flex;
+    gap: 50px;
+}
+
+.col-left,
+.col-right {
+    flex: 1;
+}
+
+/* 章节标题 */
+.section-title {
+    font-size: 35px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+/* 消费商品列表 */
+.goods-list {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.goods-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #f4d03f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.goods-list ul {
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+.goods-list ul li::before {
+    content: "• ";
+}
+
+/* 歌单与饼图 */
+.playlist-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.playlist-content ol {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.8;
+    padding-left: 20px;
+}
+
+.pie-chart {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-color: #f4d03f;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+/* 饼图分割线（模拟切片） */
+.pie-chart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #1a1a1a;
+    transform: rotate(15deg);
+}
+
+.pie-chart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #1a1a1a;
+    transform: rotate(-60deg);
+}
+
+/* 饼图内部数字定位 */
+.slice-1 { position: absolute; top: 25%; left: 65%; }
+.slice-2 { position: absolute; bottom: 30%; left: 20%; }
+.slice-3 { position: absolute; top: 20%; left: 25%; }
+.slice-4 { position: absolute; top: 10%; left: 45%; }
+.slice-5 { position: absolute; top: 30%; right: 20%; }
+
+.spotify-note {
+    font-style: italic;
+    font-size: 13px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 热点与垂直柱状图 */
+.hotspots-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.hotspots-header .section-title {
+    margin-bottom: 0;
+}
+
+.hotspots-header .chart-caption {
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.bar-chart-vertical {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 150px;
+    margin-top: 10px;
+}
+
+.bar-chart-vertical .bar {
+    flex: 1;
+    background-color: #f4d03f;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.bar-jacobs { height: 90%; }
+.bar-soda { height: 70%; }
+.bar-dwinelle { height: 40%; }
+.bar-cheet { height: 30%; }
+.bar-milk-union { height: 20%; }
+.bar-kresge { height: 15%; }
+
+.bar-chart-vertical .bar span {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 11px;
+    font-weight: bold;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+}
+
+.chart-caption {
+    font-style: italic;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.3;
+}
+
+/* 餐厅评分 */
+.rating-sub {
+    font-style: italic;
+    font-size: 13px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.restaurant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.restaurant-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 2px;
+}
+
+.stars {
+    color: #f4d03f;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+/* 水平柱状图 */
+.row-full {
+    width: 100%;
+}
+
+.bar-chart-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.h-bar-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.h-bar-row .label {
+    width: 80px;
+    font-size: 24px;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.h-bar {
+    height: 30px;
+    background-color: #f4d03f;
+}
+
+.h-bar-bus { width: 50%; }
+.h-bar-scooter { width: 55%; }
+.h-bar-foot { width: 65%; }
+.h-bar-car { width: 25%; }
+
+/* 面积图 */
+.area-chart {
+    position: relative;
+    height: 120px;
+    margin-top: 20px;
+}
+
+.area-shape {
+    width: 100%;
+    height: 100%;
+    background-color: #f4d03f;
+    /* 使用 clip-path 绘制山峰形状，精确还原原图起伏 */
+    clip-path: polygon(0% 100%, 0% 90%, 15% 85%, 30% 20%, 45% 80%, 55% 75%, 70% 15%, 85% 40%, 100% 90%, 100% 100%);
+}
+
+.x-axis {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    font-style: italic;
+    font-size: 15px;
+    margin-top: 5px;
+    color: #555;
+}
+
+/* 底部时间区域 */
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time {
+    font-size: 88px;
+    font-weight: 900;
+    letter-spacing: -3px;
+    line-height: 1;
+}
+
+.time-label {
+    font-style: italic;
+    font-size: 15px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.arrow {
+    font-size: 44px;
+    color: #1a1a1a;
+    font-weight: 900;
+}
